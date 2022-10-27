@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Header from '../components./Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components./MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import Loading from '../components./Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -14,15 +16,17 @@ class Album extends React.Component {
 
   async componentDidMount() {
     const { match } = this.props;
-    // console.log(match.params.id);
     const albumInfo = await getMusics(match.params.id);
     this.setState({
       albumInfo,
-    }, console.log(albumInfo));
+      loading: true,
+    });
+    const favSongs = await getFavoriteSongs();
+    this.setState({ loading: false }, console.log(favSongs));
   }
 
   render() {
-    const { albumInfo } = this.state;
+    const { albumInfo, loading } = this.state;
     const collectionInfo = albumInfo.filter((info) => info === albumInfo[0]);
     const albumTracksInfo = albumInfo.filter((info) => info !== albumInfo[0]);
     return (
@@ -38,15 +42,16 @@ class Album extends React.Component {
             />
           </div>
         )) }
-        { albumTracksInfo.map((track) => (
-          <MusicCard
-            key={ track.trackName }
-            trackName={ track.trackName }
-            previewUrl={ track.previewUrl }
-            trackId={ track.trackId }
-            trackObj={ track }
-          />
-        ))}
+        { loading ? <Loading /> : (
+          albumTracksInfo.map((track) => (
+            <MusicCard
+              key={ track.trackName }
+              trackName={ track.trackName }
+              previewUrl={ track.previewUrl }
+              trackId={ track.trackId }
+              trackObj={ track }
+            />
+          )))}
       </div>
     );
   }
