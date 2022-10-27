@@ -17,10 +17,11 @@ class MusicCard extends React.Component {
     const { trackId } = this.props;
     // this.setState({ loading: true });
     const favSongs = await getFavoriteSongs();
+    const isFav = favSongs.some((song) => song.trackId === trackId);
     this.setState({
-      checked: favSongs.some((song) => song.trackId === trackId),
+      checked: isFav,
       loading: false,
-    }, console.log(favSongs));
+    });
   }
 
   handleInput = async () => {

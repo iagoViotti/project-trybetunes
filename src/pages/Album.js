@@ -21,8 +21,8 @@ class Album extends React.Component {
       albumInfo,
       loading: true,
     });
-    const favSongs = await getFavoriteSongs();
-    this.setState({ loading: false }, console.log(favSongs));
+    // const favSongs = await getFavoriteSongs();
+    this.setState({ loading: false });
   }
 
   render() {
