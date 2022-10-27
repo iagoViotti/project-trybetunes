@@ -18,7 +18,7 @@ class Album extends React.Component {
     const albumInfo = await getMusics(match.params.id);
     this.setState({
       albumInfo,
-    });
+    }, console.log(albumInfo));
   }
 
   render() {
@@ -40,9 +40,11 @@ class Album extends React.Component {
         )) }
         { albumTracksInfo.map((track) => (
           <MusicCard
-            key={ track.artistId }
+            key={ track.trackName }
             trackName={ track.trackName }
             previewUrl={ track.previewUrl }
+            trackId={ track.trackId }
+            trackObj={ track }
           />
         ))}
       </div>
