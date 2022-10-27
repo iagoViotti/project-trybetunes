@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -24,16 +24,24 @@ class MusicCard extends React.Component {
     });
   }
 
-  handleInput = async () => {
+  handleInput = async (event) => {
+    console.log(event.target.checked);
     const { trackObj } = this.props;
     this.setState({ loading: true });
-    await addSong(trackObj);
-    this.setState({
-      loading: false,
-      checked: true,
-    });
-    // console.log(event.target);
-    // console.log(trackObj);
+    // <-- IMPLEMENTANDO ESSA LÓGICA, SE ESTIVER CHECKADO, DESCHEKA E REMOVE SONG
+    if (event.target.checked) {
+      await addSong(trackObj);
+      this.setState({
+        loading: false,
+        checked: true,
+      });
+    } else {
+      await removeSong(trackObj);
+      this.setState({
+        loading: false,
+        checked: false,
+      });
+    }
   };
 
   render() {
