@@ -20,13 +20,11 @@ class Favorites extends React.Component {
       loading: false,
       favSongs,
     });
-
-    // console.log(favSongs);
   }
 
-  componentDidUpdate() {
-    console.log('updated fav!');
-  }
+  // componentDidUpdate() {
+  //   console.log('updated fav!');
+  // }
 
   render() {
     const { favSongs, loading } = this.state;

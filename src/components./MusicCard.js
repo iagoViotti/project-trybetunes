@@ -25,7 +25,7 @@ class MusicCard extends React.Component {
   }
 
   // componentDidUpdate() {
-  //   console.log('updated musiccard!');
+  //
   // }
 
   handleInput = async (event) => {
