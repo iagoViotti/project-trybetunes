@@ -24,11 +24,14 @@ class MusicCard extends React.Component {
     });
   }
 
+  // componentDidUpdate() {
+  //   console.log('updated musiccard!');
+  // }
+
   handleInput = async (event) => {
-    console.log(event.target.checked);
+    // console.log(event.target.checked);
     const { trackObj } = this.props;
     this.setState({ loading: true });
-    // <-- IMPLEMENTANDO ESSA LÓGICA, SE ESTIVER CHECKADO, DESCHEKA E REMOVE SONG
     if (event.target.checked) {
       await addSong(trackObj);
       this.setState({
