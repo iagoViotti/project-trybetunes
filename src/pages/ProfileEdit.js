@@ -77,7 +77,7 @@ class ProfileEdit extends React.Component {
       email,
       image,
     };
-    // this.setState({ loading: true });
+    this.setState({ loading: true });
     await updateUser(newUserInfo);
     this.setState({ loading: false });
     history.push('/profile');

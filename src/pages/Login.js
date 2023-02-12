@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components./Loading';
+import './CSS/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -31,14 +32,12 @@ class Login extends React.Component {
   submitButton = () => {
     const { history } = this.props;
     const { userName } = this.state;
-    // createUser(userName);
+    console.log(this.props);
     this.setState({
       loading: true,
     });
     createUser({ name: userName })
       .then(() => history.push('/search'));
-    // console.log(this.props);
-    // console.log('click');
   };
 
   render() {
@@ -46,15 +45,24 @@ class Login extends React.Component {
     return (loading
       ? <Loading />
       : (
-        <div data-testid="page-login">
+        <div
+          data-testid="page-login"
+          id="page-login"
+        >
+          <h1>
+            LOGIN
+          </h1>
           <form>
             <input
+              id="login-input"
               type="text"
               data-testid="login-name-input"
               value={ userName }
+              placeholder="insert your name here"
               onChange={ this.disabledCheck }
             />
             <button
+              id="login-button"
               type="button"
               data-testid="login-submit-button"
               onClick={ this.submitButton }
