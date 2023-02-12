@@ -31,18 +31,11 @@ class Search extends React.Component {
   };
 
   buttonDisabled = (event) => {
-    const minCharacters = 2;
-    if (event.target.value.length >= minCharacters) {
-      this.setState({
-        buttonDisabled: false,
-        searchValue: event.target.value,
-      });
-    } else {
-      this.setState({
-        buttonDisabled: true,
-        searchValue: event.target.value,
-      });
-    }
+    const isEnabled = event.target.value.length >= 2;
+    this.setState({
+      buttonDisabled: !isEnabled,
+      searchValue: event.target.value,
+    });
   };
 
   render() {

@@ -97,7 +97,7 @@ class ProfileEdit extends React.Component {
                 type="text"
                 name="name"
                 value={ name }
-                // placeholder="Your Name Here"
+                placeholder="Your Name Here"
                 onChange={ this.inputChange }
               />
               <input
@@ -105,7 +105,7 @@ class ProfileEdit extends React.Component {
                 type="email"
                 name="email"
                 value={ email }
-                // placeholder="Your E-mail Here"
+                placeholder="Your E-mail Here"
                 onChange={ this.inputChange }
               />
               <input
@@ -113,7 +113,7 @@ class ProfileEdit extends React.Component {
                 type="text"
                 name="image"
                 value={ image }
-                // placeholder="Your Image Url Here"
+                placeholder="Your Image Url Here"
                 onChange={ this.inputChange }
               />
               <input
@@ -121,7 +121,7 @@ class ProfileEdit extends React.Component {
                 type="text"
                 name="description"
                 value={ description }
-                // placeholder="Your Description Here"
+                placeholder="Your Description Here"
                 onChange={ this.inputChange }
               />
               <button

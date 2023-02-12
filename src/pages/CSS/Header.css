@@ -1,0 +1,31 @@
+#header {
+  padding: 10px;
+  position: sticky;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-image: linear-gradient(rgba(155, 207, 255, 0.5), rgb(18, 18, 18, 0));}
+
+#header-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-link {
+  display: inline-block;
+  color: white;
+  margin-right: 10px;
+  align-self: center;
+}
+
+#header-profile {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#profile-picture {
+  margin-left: 20px;
+  height: 55px;
+  align-self: center;
+  border-radius: 50%;
+}

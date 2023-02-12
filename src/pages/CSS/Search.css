@@ -1,11 +1,18 @@
 body {
-  /* background-color: white;; */
+  display: block;
+  margin: 0;
 }
 
-input {
-  /* display: block;
+/* input {
+  display: block;
   margin: 10px 0;
   line-height: 2rem;
   padding-left: 50px;
-  color: white; */
+  color: white;
+} */
+
+form {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
 }
