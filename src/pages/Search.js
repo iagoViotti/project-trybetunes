@@ -41,19 +41,26 @@ class Search extends React.Component {
   render() {
     const { buttonDisabled, loading, searchValue, artistName, albunsInfo } = this.state;
     return (
-      <div data-testid="page-search">
+      <div
+        id="search-page"
+        data-testid="page-search"
+      >
         <Header />
         {loading && <Loading />}
         {!loading
           && (
-            <form>
+            <form
+              id="search-form"
+            >
               <input
+                id="search-input"
                 type="text"
                 data-testid="search-artist-input"
                 value={ searchValue }
                 onChange={ this.buttonDisabled }
               />
               <button
+                id="search-button"
                 type="button"
                 data-testid="search-artist-button"
                 disabled={ buttonDisabled }

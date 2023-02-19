@@ -1,10 +1,9 @@
 #header {
-  padding: 10px;
-  position: sticky;
+  padding: 10px 50px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  background-image: linear-gradient(rgba(155, 207, 255, 0.5), rgb(18, 18, 18, 0));}
+}
 
 #header-links {
   display: flex;
@@ -28,4 +27,23 @@
   height: 55px;
   align-self: center;
   border-radius: 50%;
+}
+
+.header-link {
+  padding: 10px 16px 12px 10px;
+  border: 0.5px darkgray;
+  border-radius: 100px;
+  background-color: aliceblue;
+  color: black;
+  text-decoration: none;
+}
+
+.search-link {
+  background: url(./svg/ui_user_profile-white.svg) no-repeat;
+}
+
+svg {
+  transform: translateY(2px);
+  height: auto;
+  margin-right: 5px;
 }

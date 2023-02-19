@@ -1,17 +1,15 @@
-body {
-  display: flex;
-  background-color:#121212;
-  justify-content: center;
-  align-items: center;
-}
-
 #page-login {
   display: flex;
-  flex-direction: column;
-  align-self: center;
   text-align: center;
-  justify-content: space-between;
-  padding: 5%;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 280px;
+  width: 300px;
+  padding: 30px; 
+  border: 1px solid rgba(88, 88, 88, 0.452);
+  border-radius: 10px;
+  margin: auto;
+  transform: translateY(30%);
 }
 
 #right-div {
@@ -35,12 +33,13 @@ form {
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   /* display: block; */
-  margin: 10px 0;
+  margin: 20px 0;
   background: url(./svg/ui_user_profile-white.svg) no-repeat;
   line-height: 2rem;
   padding-left: 50px;
   border-radius: 5px;
   color: white;
+  background-color: #272727;
 }
 
 #login-button {
