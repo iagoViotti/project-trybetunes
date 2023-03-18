@@ -46,7 +46,7 @@ class Search extends React.Component {
         data-testid="page-search"
       >
         <Header />
-        {loading && <Loading />}
+        {loading && <Loading className="loading" />}
         {!loading
           && (
             <form
@@ -58,6 +58,7 @@ class Search extends React.Component {
                 data-testid="search-artist-input"
                 value={ searchValue }
                 onChange={ this.buttonDisabled }
+                placeholder="Artist Name Here"
               />
               <button
                 id="search-button"
@@ -72,35 +73,46 @@ class Search extends React.Component {
           )}
         {artistName.length > 0 && !loading && albunsInfo.length === 0
           ? (
-            <h1>Nenhum álbum foi encontrado</h1>
+            <h1
+              className="result-header"
+            >
+              Nenhum álbum foi encontrado
+            </h1>
           )
           : artistName.length > 0 && !loading
             && (
-              <div>
-                <h1>
-                  Resultado de Álbuns de:
+              <>
+                <h1
+                  className="result-header"
+                >
+                  Resultado de Álbuns de :
                   {' '}
                   {artistName}
                 </h1>
-                {
-                  albunsInfo.map((album) => (
+                <div
+                  id="albuns-list"
+                >
+                  {albunsInfo.map((album) => (
                     <Link
                       to={ `/album/${album.collectionId}` }
                       data-testid={ `link-to-album-${album.collectionId}` }
                       key={ album.collecionId }
+                      className="card-link"
                     >
-                      <div>
+                      <div
+                        className="album-card"
+                      >
                         <img
                           src={ album.artworkUrl100 }
                           alt={ album.collectionName }
                         />
-                        <h4>{ album.collectionName }</h4>
-                        <h6>{ album.artistName }</h6>
+                        <h4>{album.collectionName}</h4>
+                        <h6>{album.artistName}</h6>
                       </div>
                     </Link>
-                  ))
-                }
-              </div>
+                  ))}
+                </div>
+              </>
             )}
       </div>
     );

@@ -1,0 +1,50 @@
+#artist-info > img {
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 5px 8px 10px;
+  margin-bottom: 10px;
+}
+
+#page-album {
+  margin: 8dvb;
+  display: flex;
+  justify-content: space-around;
+  height: 72dvb;
+}
+
+.album-music-card {
+  color: white;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #8a8a8a;
+}
+
+#albumTracks {
+  /* background-color: green; */
+  width: 500px;
+  height: 80dvb;
+  overflow-y: scroll;
+  
+}
+
+h2, h3, h4 {
+  color: whitesmoke;
+}
+
+.favorite-checkbox {
+  appearance: none;
+}
+
+#audio svg {
+  transform: translateY(-12px);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--graphite);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  /* background: rgba(40, 42, 53, 0.8); */
+}

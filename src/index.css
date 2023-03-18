@@ -7,9 +7,10 @@ body {
   background-color:#121212;
   margin: auto;
 }
-
+/* 
 .loading {
   align-items: center;
   display: flex;
   justify-content: center;
-}
+  border: 1xp solid red;
+} */

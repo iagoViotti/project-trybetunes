@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components./Header';
 import Loading from '../components./Loading';
 import { getUser, updateUser } from '../services/userAPI';
+import './CSS/ProfileEdit.css';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -91,7 +92,9 @@ class ProfileEdit extends React.Component {
         {loading
           ? <Loading />
           : (
-            <form>
+            <form
+              id="profile-edit-form"
+            >
               <input
                 data-testid="edit-input-name"
                 type="text"

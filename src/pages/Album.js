@@ -5,6 +5,7 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from '../components./MusicCard';
 // import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../components./Loading';
+import './CSS/Album.css';
 
 class Album extends React.Component {
   constructor() {
@@ -30,29 +31,43 @@ class Album extends React.Component {
     const collectionInfo = albumInfo.filter((info) => info === albumInfo[0]);
     const albumTracksInfo = albumInfo.filter((info) => info !== albumInfo[0]);
     return (
-      <div data-testid="page-album">
+      <>
         <Header />
-        { collectionInfo.map((info) => (
-          <div key={ info.artistId }>
-            <h2 data-testid="album-name">{info.collectionName}</h2>
-            <h4 data-testid="artist-name">{info.artistName}</h4>
-            <img
-              src={ info.artworkUrl100 }
-              alt={ info.collectionName }
-            />
+        <div
+          id="page-album"
+          data-testid="page-album"
+        >
+          {collectionInfo.map((info) => (
+            <div
+              key={ info.artistId }
+              id="artist-info"
+            >
+              <img
+                src={ info.artworkUrl100 }
+                alt={ info.collectionName }
+              />
+              <h2 data-testid="album-name">{info.collectionName}</h2>
+              <h4 data-testid="artist-name">{info.artistName}</h4>
+            </div>
+          ))}
+          <div
+            id="albumTracks"
+          >
+            {loading ? <Loading /> : (
+              albumTracksInfo.map((track) => (
+                <MusicCard
+                  id="music-card"
+                  key={ track.trackName }
+                  trackName={ track.trackName }
+                  previewUrl={ track.previewUrl }
+                  trackId={ track.trackId }
+                  trackObj={ track }
+                />
+              )))}
           </div>
-        )) }
-        { loading ? <Loading /> : (
-          albumTracksInfo.map((track) => (
-            <MusicCard
-              key={ track.trackName }
-              trackName={ track.trackName }
-              previewUrl={ track.previewUrl }
-              trackId={ track.trackId }
-              trackObj={ track }
-            />
-          )))}
-      </div>
+        </div>
+
+      </>
     );
   }
 }

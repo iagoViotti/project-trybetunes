@@ -32,9 +32,56 @@
 }
 
 Header {
-  /* background-color: #272727; */
   position: -webkit-sticky;
   background-color: #272727;
   position: sticky;
   top: 0;
+  min-height: 99.98px;
+  z-index: 1;
+}
+
+/* album list */
+
+#albuns-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 5px; */
+  justify-content: center;
+}
+
+.result-header {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 35px;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f1f1f;
+  border: 1px solid rgba(88, 88, 88, 0.452);
+  height: 320px;
+  width: 250px;
+  justify-content: center;
+  padding: 0 5px 10px 5px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.album-card > img {
+  align-self: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.album-card > h4,
+.album-card > h6 {
+  margin: 20px auto 0 25px;
+  color: whitesmoke;
+}
+
+
+.card-link {
+  text-decoration: none;
 }
