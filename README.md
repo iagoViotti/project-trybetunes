@@ -1,13 +1,24 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# README
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+# Project TrybeTunes
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Projeto de estudo de Front-End utilizando React, linguagem em JavaScript, que consiste em uma simulação de um site de músicas.\
+O projeto consiste numa página de login, a página principal onde é possível pesquisar por albuns pelo nome dos artistas, a página de detalhes dos albuns onde é possível favoritar suas músicas e ouvir uma prévia delas, a página de músicas favoritas, a página de perfil e de a edição de perfil.
+
+# Tecnologias usadas
+
+ Javascript, React, ReactRouter, HTML, CSS.
+
+
+# Instalando Dependências 
+
+Acesse a raiz do repositório
+Execute o comando:
+
+    npm install
+
+# Executando Testes
+
+Execute o comando:
+
+    npm test
