@@ -7,12 +7,11 @@ O projeto consiste numa página de login, a página principal onde é possível 
 
 # Tecnologias usadas
 
- Javascript, React, ReactRouter, HTML, CSS.
-
+Javascript, React, ReactRouter, HTML, CSS.
 
 # Instalando Dependências 
 
-Acesse a raiz do repositório
+Acesse a raiz do repositório,\
 Execute o comando:
 
     npm install
